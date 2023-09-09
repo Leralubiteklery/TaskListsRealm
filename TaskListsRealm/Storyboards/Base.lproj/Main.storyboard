@@ -10,7 +10,7 @@
         <!--Task Lists-->
         <scene sceneID="msj-5P-GhP">
             <objects>
-                <tableViewController id="UPA-kW-00l" sceneMemberID="viewController">
+                <tableViewController id="UPA-kW-00l" customClass="TaskListViewController" customModule="TaskListsRealm" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="mWZ-8u-Jgh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="611" y="65"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Tasks View Controller-->
         <scene sceneID="OQn-GZ-PFH">
             <objects>
-                <tableViewController id="1B7-LU-cU3" sceneMemberID="viewController">
+                <tableViewController id="1B7-LU-cU3" customClass="TasksViewController" customModule="TaskListsRealm" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="3MG-tj-9yk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
