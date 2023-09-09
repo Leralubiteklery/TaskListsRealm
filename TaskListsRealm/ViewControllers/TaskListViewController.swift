@@ -13,19 +13,59 @@ class TaskListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let addButton = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addButtonPressed)
+        )
+        
+        navigationItem.rightBarButtonItem = addButton
+        navigationItem.leftBarButtonItem = editButtonItem
 
       
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     
-        return 0
+        taskLists.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskListCell", for: indexPath)
+        var content = cell.defaultContentConfiguration()
+        let taskList = taskLists[indexPath.row]
+        content.text = taskList.name
+        content.secondaryText = "\(taskList.tasks.count)"
+        cell.contentConfiguration = content
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let taskList = taskLists[indexPath.row]
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in
+            StorageManager.shared.delete(taskList)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { [unowned self] _, _, isDone in
+            showAlert(with: taskList) {
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+            isDone(true)
+        }
+        
+        let doneAction = UIContextualAction(style: .normal, title: "Done") { _, _, isDone in
+            StorageManager.shared.done(taskList)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+            isDone(true)
+        }
+        
+        editAction.backgroundColor = .orange
+        doneAction.backgroundColor = .green
+        
+        return UISwipeActionsConfiguration(actions: [doneAction, editAction, deleteAction])
     }
 
 
@@ -38,5 +78,18 @@ class TaskListViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @objc func addButtonPressed() {
+        showAlert()
+    }
 
+}
+
+extension TaskListViewController {
+    
+    private func showAlert(with taskList: TaskList? = nil, completion: (() -> Void)? = nil) {
+//        let title = taskList != nil ? "Edit List" : "New List"
+       
+    }
+    
 }

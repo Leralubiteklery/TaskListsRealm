@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct TaskList {
+class TaskList {
     var name = ""
     var date = Date()
     var tasks: [Task] = []
 }
 
-struct Task {
+class Task {
     var name = ""
     var note = ""
     var date = Date()

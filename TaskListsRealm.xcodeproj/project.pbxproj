@@ -15,6 +15,7 @@
 		ED9B11752AAC8F11006D6F34 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B11742AAC8F11006D6F34 /* TaskListViewController.swift */; };
 		ED9B11772AAC8F63006D6F34 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B11762AAC8F63006D6F34 /* TasksViewController.swift */; };
 		ED9B117A2AAC9029006D6F34 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B11792AAC9029006D6F34 /* TaskList.swift */; };
+		ED9B117D2AAC9E0E006D6F34 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B117C2AAC9E0E006D6F34 /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		ED9B11742AAC8F11006D6F34 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		ED9B11762AAC8F63006D6F34 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		ED9B11792AAC9029006D6F34 /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
+		ED9B117C2AAC9E0E006D6F34 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		ED9B115B2AAC8E81006D6F34 /* TaskListsRealm */ = {
 			isa = PBXGroup;
 			children = (
+				ED9B117B2AAC9DFD006D6F34 /* Services */,
 				ED9B11782AAC8FD8006D6F34 /* Models */,
 				ED9B11712AAC8EC3006D6F34 /* App */,
 				ED9B11722AAC8EDB006D6F34 /* ViewControllers */,
@@ -111,6 +114,14 @@
 				ED9B11792AAC9029006D6F34 /* TaskList.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		ED9B117B2AAC9DFD006D6F34 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ED9B117C2AAC9E0E006D6F34 /* StorageManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +198,7 @@
 				ED9B115D2AAC8E81006D6F34 /* AppDelegate.swift in Sources */,
 				ED9B117A2AAC9029006D6F34 /* TaskList.swift in Sources */,
 				ED9B11772AAC8F63006D6F34 /* TasksViewController.swift in Sources */,
+				ED9B117D2AAC9E0E006D6F34 /* StorageManager.swift in Sources */,
 				ED9B115F2AAC8E81006D6F34 /* SceneDelegate.swift in Sources */,
 				ED9B11752AAC8F11006D6F34 /* TaskListViewController.swift in Sources */,
 			);
