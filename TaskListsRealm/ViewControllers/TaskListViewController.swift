@@ -23,9 +23,11 @@ class TaskListViewController: UITableViewController {
         navigationItem.rightBarButtonItem = addButton
         navigationItem.leftBarButtonItem = editButtonItem
 
-      
     }
 
+    @IBAction func sortingSegmentedControlPressed(_ sender: UISegmentedControl) {
+    }
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         taskLists.count
@@ -68,8 +70,6 @@ class TaskListViewController: UITableViewController {
         return UISwipeActionsConfiguration(actions: [doneAction, editAction, deleteAction])
     }
 
-
-    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
@@ -88,8 +88,21 @@ class TaskListViewController: UITableViewController {
 extension TaskListViewController {
     
     private func showAlert(with taskList: TaskList? = nil, completion: (() -> Void)? = nil) {
-//        let title = taskList != nil ? "Edit List" : "New List"
-       
+        let title = taskList != nil ? "Edit List" : "New List"
+        let alert = UIAlertController.createAlert(withTitle: title, andMessage: "Please set title for new task list")
+        
+        alert.action(with: taskList) { [weak self] newValue in
+            if let taskList = taskList, let completion = completion {
+                StorageManager.shared.edit(taskList, newValue: newValue)
+                completion()
+            } else {
+                self?.save(taskList: newValue)
+            }
+        }
+        present(alert, animated: true)
     }
     
+    private func save(taskList: String) {
+        
+    }
 }
