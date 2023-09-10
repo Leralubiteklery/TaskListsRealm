@@ -28,4 +28,9 @@ class StorageManager {
     func done(_ taskList: TaskList) {
         
     }
+    
+//    MARK: - Tasks
+    func save(_ task: String, withNote note: String, to taskList: TaskList, completion: (Task) -> Void) {
+
+    }
 }
