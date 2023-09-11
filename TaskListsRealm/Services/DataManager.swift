@@ -26,6 +26,8 @@ class DataManager {
             
             shoppingList.tasks.append(milk)
             shoppingList.tasks.insert(contentsOf: [bread, apples], at: 1)
+            
+            StorageManager.shared.save([shoppingList])
         }
     }
 }
