@@ -22,6 +22,7 @@ class TaskListViewController: UITableViewController {
         
         navigationItem.rightBarButtonItem = addButton
         navigationItem.leftBarButtonItem = editButtonItem
+        createTempData()
 
     }
 
@@ -82,7 +83,12 @@ class TaskListViewController: UITableViewController {
     @objc func addButtonPressed() {
         showAlert()
     }
-
+    
+    private func createTempData() {
+        DataManager.shared.createTempData { [unowned self] in
+            tableView.reloadData()
+        }
+    }
 }
 
 extension TaskListViewController {
