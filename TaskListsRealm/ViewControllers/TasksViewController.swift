@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 class TasksViewController: UITableViewController {
     
     var taskList: TaskList!
-    private var currentTasks: [Task] = []
-    private var completedTasks: [Task] = []
+    private var currentTasks: Results<Task>!
+    private var completedTasks: Results<Task>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,8 @@ class TasksViewController: UITableViewController {
             action: #selector(addButtonPressed)
         )
         navigationItem.rightBarButtonItems = [addButton, editButtonItem]
+        currentTasks = taskList.tasks.filter("isCompleted = false")
+        completedTasks = taskList.tasks.filter("isCompleted = true")
     }
     
     // MARK: - Table view data source

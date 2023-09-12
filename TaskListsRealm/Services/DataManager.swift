@@ -4,7 +4,6 @@
 //
 //  Created by Lera Savchenko on 11.09.23.
 //
-
 import Foundation
 
 class DataManager {
@@ -19,15 +18,19 @@ class DataManager {
             
             let milk = Task()
             milk.name = "Milk"
-            milk.note = "1l"
+            milk.note = "2L"
             
             let bread = Task(value: ["Bread", "", Date(), true])
-            let apples = Task(value: ["name": "Apples", "note": "2kg"])
+            let apples = Task(value: ["name": "Apples", "note": "2Kg"])
             
             shoppingList.tasks.append(milk)
             shoppingList.tasks.insert(contentsOf: [bread, apples], at: 1)
             
-            StorageManager.shared.save([shoppingList])
+            DispatchQueue.main.async {
+                StorageManager.shared.save([shoppingList])
+                UserDefaults.standard.set(true, forKey: "done")
+                completion()
+            }
         }
     }
 }

@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class TaskListViewController: UITableViewController {
 
-    var taskLists: [TaskList] = []
+    var taskLists: Results<TaskList>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class TaskListViewController: UITableViewController {
         navigationItem.rightBarButtonItem = addButton
         navigationItem.leftBarButtonItem = editButtonItem
         createTempData()
+        taskLists = StorageManager.shared.realm.objects(TaskList.self)
 
     }
 
