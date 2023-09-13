@@ -20,6 +20,7 @@
 		ED9B11822AADBBAB006D6F34 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = ED9B11812AADBBAB006D6F34 /* Realm */; };
 		ED9B11842AADBBAB006D6F34 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ED9B11832AADBBAB006D6F34 /* RealmSwift */; };
 		ED9B11872AAF6603006D6F34 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B11862AAF6603006D6F34 /* DataManager.swift */; };
+		ED9B11892AB2140E006D6F34 /* Extension + UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B11882AB2140E006D6F34 /* Extension + UITableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		ED9B117C2AAC9E0E006D6F34 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		ED9B117E2AAD9CEC006D6F34 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		ED9B11862AAF6603006D6F34 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		ED9B11882AB2140E006D6F34 /* Extension + UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITableViewCell.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				ED9B11742AAC8F11006D6F34 /* TaskListViewController.swift */,
 				ED9B11762AAC8F63006D6F34 /* TasksViewController.swift */,
 				ED9B117E2AAD9CEC006D6F34 /* AlertController.swift */,
+				ED9B11882AB2140E006D6F34 /* Extension + UITableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				ED9B117F2AAD9CEC006D6F34 /* AlertController.swift in Sources */,
 				ED9B11772AAC8F63006D6F34 /* TasksViewController.swift in Sources */,
 				ED9B117D2AAC9E0E006D6F34 /* StorageManager.swift in Sources */,
+				ED9B11892AB2140E006D6F34 /* Extension + UITableViewCell.swift in Sources */,
 				ED9B115F2AAC8E81006D6F34 /* SceneDelegate.swift in Sources */,
 				ED9B11752AAC8F11006D6F34 /* TaskListViewController.swift in Sources */,
 			);
