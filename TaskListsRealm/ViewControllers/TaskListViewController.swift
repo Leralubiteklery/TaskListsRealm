@@ -27,6 +27,11 @@ class TaskListViewController: UITableViewController {
         taskLists = StorageManager.shared.realm.objects(TaskList.self)
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     @IBAction func sortingSegmentedControlPressed(_ sender: UISegmentedControl) {
     }
@@ -68,7 +73,7 @@ class TaskListViewController: UITableViewController {
         }
         
         editAction.backgroundColor = .orange
-        doneAction.backgroundColor = .green
+        doneAction.backgroundColor = #colorLiteral(red: 0, green: 0.7559313178, blue: 0, alpha: 1)
         
         return UISwipeActionsConfiguration(actions: [doneAction, editAction, deleteAction])
     }
