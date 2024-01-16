@@ -1,6 +1,6 @@
 # TaskListsRealm
 
-Study project meant to learn how to work with Realm. This is a task list app that allows user to add, edit, delete a task list and to add to each list a task (also edit theam and delete). Task are grouped by completed / current sections. All data is stored in Realm locally. 
+Study project meant to learn how to work with Realm. This is a task list app that allows user to add, edit, delete a task list and to add to each list a task (also edit them and delete). Task are grouped by completed / current sections. All data is stored in Realm locally. 
 
 First screen - TaskListsVC with the following functionalities:
 - sorting lists
